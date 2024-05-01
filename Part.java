@@ -1,20 +1,30 @@
-public class Part{
+public class Part {
+    // Private variable to store the number of the part
     private int number = 0;
+    
+    // Constant representing the last part number
     public final int LAST_PART = 4;
-    public Part(int num)
-    {
+    
+    // Constructor to initialize the Part with a number
+    public Part(int num) {
         number = num;
     }
-    public int getNum()
-    {
+    
+    // Method to get the number of the Part
+    public int getNum() {
         return number;
     }
-    public boolean isLastPart()
-    {
+    
+    // Method to check if the Part is the last part
+    public boolean isLastPart() {
+        // Returns true if the number of the Part is equal to the last part number
         return (number == LAST_PART);
     }
-    public boolean isNext(Part inp)
-    {
-        return (number+1 == inp.getNum());
+    
+    // Method to check if the given part is the next part after this Part
+    public boolean isNext(Part inp) {
+        // Returns true if the number of the given Part is one more than the number of this Part
+        return (number + 1 == inp.getNum());
     }
+    
 }

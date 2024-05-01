@@ -16,7 +16,7 @@ public class Game {
 		//setUpDoors();
 	}
 
-	   /**
+	    /**
 	    * Assuming that Rooms has been initialized in the constructor 
 	    * to hold 10 objects of type Room or a subclass of Room, this method 
 	    * sets up the doors between the rooms, as described in the map

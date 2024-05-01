@@ -12,7 +12,7 @@ public class Room {
 		doors = new Room[4];				
 	}
 	
-	   /**
+	    /**
 	    * Sets the door[direction] to r, after checking for inconsistencies
 	    *
 	    * @param direction, one of the values in class Direction
@@ -29,7 +29,7 @@ public class Room {
 		else throw (new Exception ("Inconsistent Door from Room "+number+" to Room "+ r.getNumber()));
 	}
 	
-	   /**
+	    /**
 	    * returns the Room object to which a door in 
 	    * a specific direction points; null if none
 	    * @param direction, one of the values in class Direction
@@ -41,7 +41,7 @@ public class Room {
 		return doors[direction];
 	}
 
-	   /**
+	    /**
 	    * getter method. Returns number
 	    * @return int
 	    */
@@ -50,7 +50,7 @@ public class Room {
 		return number;
 	}
 
-	   /**
+	    /**
 	    * returns false for generic room type. To be overridden 
 	    * in subclass RoomWithMachinePart
 	    * @return boolean
@@ -60,7 +60,7 @@ public class Room {
 		return false;
 	}
 
-	   /**
+	    /**
 	    * returns false for generic room type. To be overridden 
 	    * in subclass RoomWithTools
 	    * @return boolean
@@ -69,7 +69,7 @@ public class Room {
 	public boolean hasTools() {
 		return false;
 	}
-	   /**
+	    /**
 	    * returns false for generic room type. To be overridden 
 	    * in subclass Workshop
 	    * @return boolean
@@ -78,7 +78,7 @@ public class Room {
 	public boolean isWorkshop () {
 		return false;
 	}
-	   /**
+	    /**
 	    * returns the welcome message for a player entering this room
 	    * @return String
 	    */
@@ -87,7 +87,7 @@ public class Room {
 		return "Welcome to Room "+number;
 	}
 
-	   /**
+	    /**
 	    * returns a help message for specifying this room number
 	    * @return String
 	    */
