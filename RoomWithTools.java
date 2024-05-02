@@ -1,11 +1,16 @@
-public class RoomWithTools extends Room{
-    public RoomWithTools(int num)
+public class RoomWithTools extends Room {
+    // Constructor for RoomWithTools class that takes an integer 'num'
+    public RoomWithTools(int num) 
     {
-        super(num);
-    }
-    @Override
-    public boolean hasTools() {
-        return true;
+        // Calling the constructor of the superclass Room with 'num'
+        super(num); 
     }
 
+// Overriding the hasTools method from the superclass Room
+    @Override
+    public boolean hasTools() 
+    {
+        // Always returning true to indicate that the room has tools
+        return true;
+    }
 }
