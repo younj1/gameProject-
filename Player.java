@@ -32,8 +32,8 @@ public class Player{
     }
     public String collectPart(){
         if(currentRoom.hasPart()){
-            if(currentRoom.getPart().isNext(lastMachinePartCollected)){
-                lastMachinePartCollected = currentRoom.getPart();
+            if(((RoomWithMachinePart)currentRoom).getPart().isNext(lastMachinePartCollected)){
+                lastMachinePartCollected = ((RoomWithMachinePart)currentRoom).getPart();
                 return(
                 "You have successfully collected part "
                 +lastMachinePartCollected.getNum()+
@@ -41,11 +41,11 @@ public class Player{
                 "is the part number");
             }
             else{
-                return("The part in this room is not the next part")
+                return("The part in this room is not the next part");
             }
         }
         else{
-            return("This room doesn't have a part")
+            return("This room doesn't have a part");
         }
     }
 
@@ -55,7 +55,7 @@ public class Player{
 
         if(currentRoom.hasTools()){
             allToolsCollected = true;
-            return("You successfully collected tools")
+            return("You successfully collected tools");
         }
         else
         {

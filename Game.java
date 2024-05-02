@@ -4,19 +4,57 @@
  * @author ADD YOUR NAME
  */
 
-public class Game {
+public class Game{
 	private Player[] players;
 	private Room[] rooms;
 	private Player currentPlayer;
 
 	public Game()
 	{
-	//this is where i gave up..
-		//rooms[]
-		//setUpDoors();
+		rooms = new Room[10];
+		players = new Player[2];
+		rooms[0] = new Room(1);
+		rooms[1] = new RoomWithMachinePart(2,new Part(3));
+		rooms[2] = new RoomWithMachinePart(3,new Part(1));
+		rooms[3] = new Room(2);
+		rooms[4] = new RoomWithMachinePart(2,new Part(2));
+		rooms[5] = new RoomWithMachinePart(2,new Part(4));
+		rooms[6] = new Room(7);
+		rooms[7] = new RoomWithTools(8);
+		rooms[8] = new Room(9);
+		rooms[9] = new Workshop(10);
+		try
+		{
+			setUpDoors();
+		} 
+		catch(Exception e){
+			System.out.println(e);
+			System.out.println("exception e");
+		}
+
 	}
 
-	    /**
+	public void InitGame()
+	{
+		players[0] = new Player(1,rooms[0]);
+		players[1] = new Player(2,rooms[0]);
+		currentPlayer = players[0];
+	}
+
+	public Player getCurrentPlayer() 
+	{
+		return currentPlayer;
+	}
+	public void switchPlayer(){
+		if(currentPlayer == players[0]){
+			currentPlayer = players[0];
+		}
+		else{
+			currentPlayer = players[1];
+		}
+	}
+
+	   /**
 	    * Assuming that Rooms has been initialized in the constructor 
 	    * to hold 10 objects of type Room or a subclass of Room, this method 
 	    * sets up the doors between the rooms, as described in the map
@@ -25,6 +63,7 @@ public class Game {
 	    */
 	
 	private void setUpDoors() throws Exception {
+		
 		rooms[0].setDoor(Direction.up, rooms[3]);
 		rooms[0].setDoor(Direction.left, rooms[8]);
 		
@@ -56,7 +95,6 @@ public class Game {
 
 		rooms[9].setDoor(Direction.up, rooms[5]);
 		rooms[9].setDoor(Direction.left, rooms[1]);
-
 	}	
 
 }
