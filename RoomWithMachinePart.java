@@ -1,47 +1,35 @@
 public class RoomWithMachinePart extends Room {
-    // Declaring a private variable named 'part' of type Part
-    private Part part; 
-
-    // Constructor for RoomWithMachinePart class that takes an integer 'num' and a Part 'part'
-    public RoomWithMachinePart(int num, Part part) 
-    {
-        // Calling the constructor of the superclass Room with 'num'
-        super(num); 
-        // Assigning the 'part' parameter to the 'part' variable of this class
-        this.part = part; 
+    private Part part;
+    
+    // Constructor for initializing a room with a machine part
+    public RoomWithMachinePart(int num, Part part) {
+        super(num); // Calling the constructor of the superclass (Room)
+        this.part = part;
     }
 
-    // Method to get the 'part' attribute of the room
-    public Part getPart() 
-    {
-        // Returning the 'part'
-        return part; 
+    // Getter method for retrieving the machine part in the room
+    public Part getPart() {
+        return part;
     }
 
- // Method to collect a part by a player
-    public Part collectPart(Player player)
-    {
-        // Checking if the 'part' is the next part to collect
-        if (part.isNext(part)) 
-        // Returning the 'part' if it is the next part
-            return part; 
-        else
-        // Returning null if it's not the next part
-            return null; 
+    // Method for collecting the machine part by the player
+    public Part collectPart(Player player) {
+        // Checking if the collected part is the next part in sequence
+        if (part.isNext(part)) {
+            return part;
+        } else {
+            return null;
+        }
     }
 
-// Overriding the hasPart method from the superclass Room
+    // Overriding the hasPart method to indicate that this room has a machine part
     @Override
-    public boolean hasPart() 
-    {
-        // Always returning true to indicate that the room has a part
-        return true; 
+    public boolean hasPart() {
+        return true;
     }
 
-// Method to provide help information
-    public String help() 
-    {
-        // Returning a help message with the room number
-        return "HELP HELP!! room number: " + super.getNumber(); 
+    // Method to provide help message specific to this room
+    public String help() {
+        return("HELP HELP!! room number:" + super.getNumber());
     }
 }

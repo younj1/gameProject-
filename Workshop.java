@@ -1,12 +1,13 @@
 public class Workshop extends Room {
-    public Workshop(int num) // Constructor for Workshop class that takes an integer 'num'
-    {
-        super(num); // Calling the constructor of the superclass Room with 'num'
+    
+    // Constructor for initializing a workshop room
+    public Workshop(int num) {
+        super(num); // Calling the constructor of the superclass (Room)
     }
 
+    // Overriding the isWorkshop method to indicate that this room is a workshop
     @Override
-    public boolean isWorkshop() // Overriding the isWorkshop method from the superclass Room
-    {
-        return true; // Always returning true to indicate that the room is a workshop
+    public boolean isWorkshop() {
+        return true;
     }
 }

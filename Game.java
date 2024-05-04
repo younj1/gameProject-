@@ -16,9 +16,9 @@ public class Game{
 		rooms[0] = new Room(1);
 		rooms[1] = new RoomWithMachinePart(2,new Part(3));
 		rooms[2] = new RoomWithMachinePart(3,new Part(1));
-		rooms[3] = new Room(2);
-		rooms[4] = new RoomWithMachinePart(2,new Part(2));
-		rooms[5] = new RoomWithMachinePart(2,new Part(4));
+		rooms[3] = new Room(4);
+		rooms[4] = new RoomWithMachinePart(5,new Part(2));
+		rooms[5] = new RoomWithMachinePart(6,new Part(4));
 		rooms[6] = new Room(7);
 		rooms[7] = new RoomWithTools(8);
 		rooms[8] = new Room(9);
@@ -47,10 +47,12 @@ public class Game{
 	}
 	public void switchPlayer(){
 		if(currentPlayer == players[0]){
-			currentPlayer = players[0];
+			currentPlayer = players[1];
+			System.out.println("CurrentPlayer: "+currentPlayer.getNum());
 		}
 		else{
-			currentPlayer = players[1];
+			currentPlayer = players[0];
+			System.out.println("CurrentPlayer: "+currentPlayer.getNum());
 		}
 	}
 

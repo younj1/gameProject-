@@ -11,7 +11,7 @@ public class Direction {
 	public static final int up = 2;
 	public static final int down = 3;
 
-	   /**
+	    /**
 	    * returns the opposite index of a given direction 
 	    * ex: getOpposite(0) or getOpposite(right) return 1 or left
 	    * @return int

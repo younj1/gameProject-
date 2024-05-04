@@ -12,7 +12,7 @@ public class Room {
 		doors = new Room[4];				
 	}
 	
-	   /**
+	    /**
 	    * Sets the door[direction] to r, after checking for inconsistencies
 	    *
 	    * @param direction, one of the values in class Direction
