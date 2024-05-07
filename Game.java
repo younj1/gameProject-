@@ -9,10 +9,12 @@ public class Game{
 	private Room[] rooms;
 	private Player currentPlayer;
 
+	// Constructor for the Game class
 	public Game()
 	{
 		rooms = new Room[10];
 		players = new Player[2];
+		// Initializing rooms with specific types
 		rooms[0] = new Room(1);
 		rooms[1] = new RoomWithMachinePart(2,new Part(3));
 		rooms[2] = new RoomWithMachinePart(3,new Part(1));
@@ -23,6 +25,7 @@ public class Game{
 		rooms[7] = new RoomWithTools(8);
 		rooms[8] = new Room(9);
 		rooms[9] = new Workshop(10);
+		// Setting up doors between rooms
 		try
 		{
 			setUpDoors();
@@ -34,6 +37,7 @@ public class Game{
 
 	}
 
+	// Method to initialize the game with players starting in room 0
 	public void InitGame()
 	{
 		players[0] = new Player(1,rooms[0]);
@@ -41,10 +45,13 @@ public class Game{
 		currentPlayer = players[0];
 	}
 
+	// Getter method for retrieving the current player
 	public Player getCurrentPlayer() 
 	{
 		return currentPlayer;
 	}
+
+	// Method to switch the current player between players 0 and 1
 	public void switchPlayer(){
 		if(currentPlayer == players[0]){
 			currentPlayer = players[1];
@@ -56,14 +63,15 @@ public class Game{
 		}
 	}
 
-	   /**
-	    * Assuming that Rooms has been initialized in the constructor 
-	    * to hold 10 objects of type Room or a subclass of Room, this method 
-	    * sets up the doors between the rooms, as described in the map
-	    * @return void
-	    * @throws Exception if inconsistencies found by setDoor
-	    */
-	
+	/**
+	* Assuming that Rooms has been initialized in the constructor 
+	* to hold 10 objects of type Room or a subclass of Room, this method 
+	* sets up the doors between the rooms, as described in the map
+	* @return void
+	* @throws Exception if inconsistencies found by setDoor
+	*/
+
+	// Method to set up doors between rooms based on a specified map
 	private void setUpDoors() throws Exception {
 		
 		rooms[0].setDoor(Direction.up, rooms[3]);
@@ -100,4 +108,3 @@ public class Game{
 	}	
 
 }
-
